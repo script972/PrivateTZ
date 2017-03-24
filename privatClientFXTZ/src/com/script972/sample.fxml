@@ -9,84 +9,93 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="473.0" prefWidth="999.0" style="-fx-background-color: #04ff00;" xmlns="http://javafx.com/javafx/8.0.91" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="473.0" prefWidth="999.0" style="-fx-background-color: #04ff00;" xmlns="http://javafx.com/javafx/8.0.91" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.script972.Controller">
    <children>
-      <TabPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: black;" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-        <tabs>
-          <Tab text="Table Show">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <TableView layoutY="38.0" prefHeight="368.0" prefWidth="999.0" AnchorPane.bottomAnchor="38.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="38.0">
-                          <columns>
-                            <TableColumn prefWidth="116.0" text="Account Id" />
-                            <TableColumn prefWidth="140.0" text="Name" />
-                            <TableColumn prefWidth="74.0" text="Country" />
-                            <TableColumn prefWidth="144.0" text="Type" />
-                            <TableColumn prefWidth="201.0" text="Depositor" />
-                            <TableColumn prefWidth="133.0" text="Amount on deposit" />
-                            <TableColumn prefWidth="78.0" text="Profitability" />
-                            <TableColumn prefWidth="116.0" text="Time constraints" />
-                          </columns>
-                        </TableView>
-                        <TextField fx:id="fieldID" layoutY="8.0" prefHeight="25.0" prefWidth="58.0" promptText="Id" />
-                        <Button fx:id="ButSerchByID" layoutX="58.0" layoutY="8.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="55.0" text="Search" />
-                        <TextField fx:id="fieldFIO" layoutX="474.0" layoutY="8.0" prefHeight="25.0" prefWidth="148.0" promptText="Depositor" />
-                        <Button fx:id="ButSerchByFIO" layoutX="623.0" layoutY="8.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="52.0" text="Search" />
-                        <Button fx:id="ButSerchByDeposit" layoutX="420.0" layoutY="8.0" mnemonicParsing="false" text="Search" />
-                        <ComboBox fx:id="boxDeposit" layoutX="330.0" layoutY="8.0" prefHeight="25.0" prefWidth="91.0" promptText="Deposit" />
-                        <TextField fx:id="fieldBanckName" layoutX="117.0" layoutY="8.0" prefHeight="25.0" prefWidth="89.0" promptText="BankName" />
-                        <Button fx:id="ButSerchByBankName" layoutX="207.0" layoutY="8.0" mnemonicParsing="false" text="Search" />
-                        <TextField layoutY="413.0" prefHeight="25.0" prefWidth="58.0" promptText="Id Remove" />
-                        <Button layoutX="60.0" layoutY="413.0" mnemonicParsing="false" text="Remove" />
-                     </children></AnchorPane>
-            </content>
-          </Tab>
-          <Tab text="General Result">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <Label fx:id="GeneralSum" layoutX="26.0" layoutY="14.0" text="General Sum=" textFill="#04ff00" />
-                        <Label fx:id="SumCount" layoutX="26.0" layoutY="49.0" text="Sum Count=" textFill="#04ff00" />
-                        <Label layoutX="460.0" layoutY="7.0" text="*for result click on label" textFill="RED" />
-                     </children></AnchorPane>
-            </content>
-          </Tab>
-            <Tab text="New Deposit">
-                <content>
+      <BorderPane prefHeight="473.0" prefWidth="999.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <TabPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: black;" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+              <tabs>
+                <Tab text="Table Show">
+                  <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <Label layoutX="14.0" layoutY="29.0" text="Account id" textFill="#04ff00" />
-                        <TextField fx:id="NewUserAccountID" editable="false" layoutX="86.0" layoutY="25.0" prefHeight="25.0" prefWidth="91.0" />
-                        <Label layoutX="14.0" layoutY="73.0" text="Name" textFill="#04ff00" />
-                        <Label layoutX="16.0" layoutY="113.0" text="Country" textFill="#04ff00" />
-                        <Label layoutX="16.0" layoutY="155.0" text="Type" textFill="#04ff00" />
-                        <Label layoutX="16.0" layoutY="197.0" text="Depositor" textFill="#04ff00" />
-                        <Label layoutX="15.0" layoutY="235.0" prefHeight="45.0" prefWidth="61.0" text="Amount on deposit" textFill="#04ff00" wrapText="true" />
-                        <Label layoutX="17.0" layoutY="304.0" text="Profitability" textFill="#04ff00" />
-                        <Label layoutX="17.0" layoutY="347.0" prefHeight="37.0" prefWidth="70.0" text="Time constraints" textFill="#04ff00" wrapText="true" />
-                        <TextField layoutX="87.0" layoutY="69.0" />
-                        <TextField layoutX="87.0" layoutY="109.0" />
-                        <TextField layoutX="87.0" layoutY="193.0" />
-                        <ComboBox layoutX="87.0" layoutY="151.0" prefWidth="150.0" />
-                        <TextField layoutX="87.0" layoutY="245.0" />
-                        <TextField layoutX="88.0" layoutY="300.0" />
-                        <TextField layoutX="88.0" layoutY="353.0" />
-                        <Button layoutX="147.0" layoutY="384.0" mnemonicParsing="false" style="-fx-background-color: #04ff00;" text="Add Deposit">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font></Button>
-                        <Label layoutX="16.0" layoutY="388.0" text="ERROR" textFill="#fc0000">
-                           <font>
-                              <Font size="14.0" />
-                           </font></Label>
-                     </children>
-                    </AnchorPane>
-                </content>
-            </Tab>
-        </tabs>
-      </TabPane>
+                           <children>
+                              <TableView fx:id="tableDeposit" layoutY="38.0" prefHeight="368.0" prefWidth="999.0" style="-fx-background-color: green;" AnchorPane.bottomAnchor="38.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="38.0">
+                                <columns>
+                                  <TableColumn fx:id="columnAccoundId" prefWidth="116.0" style="-fx-backgorund-color: white;" text="Account Id" />
+                                  <TableColumn fx:id="columnName" prefWidth="140.0" style="-fx-backgorund-color: green;" text="Name" />
+                                  <TableColumn fx:id="columnCountry" prefWidth="74.0" style="-fx-backgorund-color: white;" text="Country" />
+                                  <TableColumn fx:id="columnType" prefWidth="144.0" style="-fx-backgorund-color: white;" text="Type" />
+                                  <TableColumn fx:id="columnDepositor" prefWidth="201.0" style="-fx-backgorund-color: white;" text="Depositor" />
+                                  <TableColumn fx:id="columnAmountOnDeposit" prefWidth="133.0" style="-fx-backgorund-color: white;" text="Amount on deposit" />
+                                  <TableColumn fx:id="columnProfitability" prefWidth="78.0" style="-fx-backgorund-color: white;" text="Profitability" />
+                                  <TableColumn fx:id="columnTimeConstraints" prefWidth="116.0" style="-fx-backgorund-color: white;" text="Time constraints" />
+                                </columns>
+                              </TableView>
+                              <TextField fx:id="fieldID" layoutY="8.0" prefHeight="25.0" prefWidth="58.0" promptText="Id" />
+                              <Button layoutX="58.0" layoutY="8.0" mnemonicParsing="false" onAction="#searchByID" prefHeight="25.0" prefWidth="55.0" text="Search" />
+                              <TextField fx:id="fieldFIO" layoutX="474.0" layoutY="8.0" prefHeight="25.0" prefWidth="148.0" promptText="Depositor" />
+                              <Button fx:id="ButSerchByFIO" layoutX="623.0" layoutY="8.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="52.0" text="Search" />
+                              <Button fx:id="ButSerchByDeposit" layoutX="420.0" layoutY="8.0" mnemonicParsing="false" text="Search" />
+                              <ComboBox fx:id="boxDeposit" layoutX="330.0" layoutY="8.0" prefHeight="25.0" prefWidth="91.0" promptText="Deposit" />
+                              <TextField fx:id="fieldBanckName" layoutX="117.0" layoutY="8.0" prefHeight="25.0" prefWidth="89.0" promptText="BankName" />
+                              <Button fx:id="ButSerchByBankName" layoutX="207.0" layoutY="8.0" mnemonicParsing="false" text="Search" />
+                              <TextField layoutX="941.0" layoutY="8.0" prefHeight="25.0" prefWidth="58.0" promptText="Id Remove" />
+                              <Button layoutX="881.0" layoutY="8.0" mnemonicParsing="false" text="Remove" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="General Result">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Label fx:id="GeneralSum" layoutX="26.0" layoutY="14.0" text="General Sum=" textFill="#04ff00" />
+                              <Label fx:id="SumCount" layoutX="26.0" layoutY="49.0" text="Sum Count=" textFill="#04ff00" />
+                              <Label layoutX="460.0" layoutY="7.0" text="*for result click on label" textFill="RED" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab text="New Deposit">
+                      <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Label layoutX="14.0" layoutY="29.0" text="Account id" textFill="#04ff00" />
+                              <TextField fx:id="NewUserAccountID" editable="false" layoutX="86.0" layoutY="25.0" prefHeight="25.0" prefWidth="91.0" />
+                              <Label layoutX="14.0" layoutY="73.0" text="Name" textFill="#04ff00" />
+                              <Label layoutX="16.0" layoutY="113.0" text="Country" textFill="#04ff00" />
+                              <Label layoutX="16.0" layoutY="155.0" text="Type" textFill="#04ff00" />
+                              <Label layoutX="16.0" layoutY="197.0" text="Depositor" textFill="#04ff00" />
+                              <Label layoutX="15.0" layoutY="235.0" prefHeight="45.0" prefWidth="61.0" text="Amount on deposit" textFill="#04ff00" wrapText="true" />
+                              <Label layoutX="17.0" layoutY="304.0" text="Profitability" textFill="#04ff00" />
+                              <Label layoutX="17.0" layoutY="347.0" prefHeight="37.0" prefWidth="70.0" text="Time constraints" textFill="#04ff00" wrapText="true" />
+                              <TextField layoutX="87.0" layoutY="69.0" />
+                              <TextField layoutX="87.0" layoutY="109.0" />
+                              <TextField layoutX="87.0" layoutY="193.0" />
+                              <ComboBox layoutX="87.0" layoutY="151.0" prefWidth="150.0" />
+                              <TextField layoutX="87.0" layoutY="245.0" />
+                              <TextField layoutX="88.0" layoutY="300.0" />
+                              <TextField layoutX="88.0" layoutY="353.0" />
+                              <Button layoutX="147.0" layoutY="384.0" mnemonicParsing="false" style="-fx-background-color: #04ff00;" text="Add Deposit">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                              <Label layoutX="16.0" layoutY="388.0" text="ERROR" textFill="#fc0000">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                          </AnchorPane>
+                      </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </center>
+      </BorderPane>
    </children>
 </AnchorPane>
