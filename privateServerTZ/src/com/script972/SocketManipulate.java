@@ -11,7 +11,7 @@ import static java.lang.System.in;
  * Created by script972 on 23.03.2017.
  */
 public class SocketManipulate {
-    public static void main(String[] args) throws IOException {
+    public  void connecting() throws IOException {
 
             ServerSocket serverSocket=null;
             int port=145;

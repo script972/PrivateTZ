@@ -1,31 +1,31 @@
 package com.script972;
 
+import java.io.Serializable;
 import java.math.BigInteger;
 
 /**
  * Created by script972 on 23.03.2017.
  */
-public class Deposit {
+public class Deposit implements Serializable {
     String name;
     String country;
     Type type;
     String deposit;
     int account_id;
-    BigInteger money;
-    byte persent;
+    long money;
+    int persent;
     int time_constraints;
 
-    public Deposit(String name, String country, Type type, String deposit, int account_id, BigInteger money, byte persent, int time_constraints) {
-        name = name;
+    public Deposit(String name, String country, Type type, String deposit, int account_id, long money, int persent, int time_constraints) {
+        this.name = name;
         this.country = country;
         this.type = type;
-        deposit = deposit;
+        this.deposit = deposit;
         this.account_id = account_id;
         this.money = money;
         this.persent = persent;
         this.time_constraints = time_constraints;
     }
-
 
     @Override
     public String toString() {
@@ -81,19 +81,19 @@ public class Deposit {
         this.account_id = account_id;
     }
 
-    public BigInteger getMoney() {
+    public long getMoney() {
         return money;
     }
 
-    public void setMoney(BigInteger money) {
+    public void setMoney(long money) {
         this.money = money;
     }
 
-    public byte getPersent() {
+    public int getPersent() {
         return persent;
     }
 
-    public void setPersent(byte persent) {
+    public void setPersent(int persent) {
         this.persent = persent;
     }
 
