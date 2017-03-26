@@ -1,5 +1,6 @@
 package com.script972;
 
+import com.script972.Model.SocketsManipulate;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -16,10 +17,14 @@ public class Main extends Application {
         primaryStage.setTitle("Private26-2 TZ");
         primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();
+
+
+
     }
 
 
     public static void main(String[] args) {
+        new SocketsManipulate().start();
         launch(args);
     }
 }

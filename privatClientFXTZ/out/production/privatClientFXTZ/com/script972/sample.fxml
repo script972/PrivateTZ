@@ -24,14 +24,14 @@
                            <children>
                               <TableView fx:id="tableDeposit" layoutY="38.0" prefHeight="368.0" prefWidth="999.0" style="-fx-background-color: green;" AnchorPane.bottomAnchor="38.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="38.0">
                                 <columns>
-                                  <TableColumn fx:id="columnAccoundId" prefWidth="116.0" style="-fx-background-color: green;" text="Account Id" />
-                                  <TableColumn fx:id="columnName" prefWidth="140.0" style="-fx-background-color: green;" text="Name" />
-                                  <TableColumn fx:id="columnCountry" prefWidth="74.0" style="-fx-background-color: green;" text="Country" />
-                                  <TableColumn fx:id="columnType" prefWidth="144.0" style="-fx-background-color: green;" text="Type" />
-                                  <TableColumn fx:id="columnDepositor" prefWidth="201.0" style="-fx-background-color: green;" text="Depositor" />
-                                  <TableColumn fx:id="columnAmountOnDeposit" prefWidth="133.0" style="-fx-background-color: green;" text="Amount on deposit" />
-                                  <TableColumn fx:id="columnProfitability" prefWidth="78.0" style="-fx-background-color: green;" text="Profitability" />
-                                  <TableColumn fx:id="columnTimeConstraints" prefWidth="116.0" style="-fx-background-color: green;" text="Time constraints" />
+                                  <TableColumn fx:id="columnAccoundId" prefWidth="116.0" style="-fx-backgorund-color: white;" text="Account Id" />
+                                  <TableColumn fx:id="columnName" prefWidth="140.0" style="-fx-backgorund-color: green;" text="Name" />
+                                  <TableColumn fx:id="columnCountry" prefWidth="74.0" style="-fx-backgorund-color: white;" text="Country" />
+                                  <TableColumn fx:id="columnType" prefWidth="144.0" style="-fx-backgorund-color: white;" text="Type" />
+                                  <TableColumn fx:id="columnDepositor" prefWidth="201.0" style="-fx-backgorund-color: white;" text="Depositor" />
+                                  <TableColumn fx:id="columnAmountOnDeposit" prefWidth="133.0" style="-fx-backgorund-color: white;" text="Amount on deposit" />
+                                  <TableColumn fx:id="columnProfitability" prefWidth="78.0" style="-fx-backgorund-color: white;" text="Profitability" />
+                                  <TableColumn fx:id="columnTimeConstraints" prefWidth="116.0" style="-fx-backgorund-color: white;" text="Time constraints" />
                                 </columns>
                               </TableView>
                               <TextField fx:id="fieldID" layoutY="8.0" prefHeight="25.0" prefWidth="58.0" promptText="Id" />

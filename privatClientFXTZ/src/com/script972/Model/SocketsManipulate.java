@@ -6,7 +6,7 @@ import java.net.Socket;
 /**
  * Created by script972 on 23.03.2017.
  */
-public class SocketsManipulate {
+public class SocketsManipulate extends Thread {
     public void connect() throws IOException {
         Socket clientSocket=null;
         int port=145;
@@ -37,4 +37,13 @@ public class SocketsManipulate {
             System.out.println("Ответ от сервера таков "+line);
         }
     }
+
+    public void run(){
+        try {
+            connect();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

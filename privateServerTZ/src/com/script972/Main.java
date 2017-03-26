@@ -1,5 +1,6 @@
 package com.script972;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -7,10 +8,12 @@ import java.util.ArrayList;
  */
 public class Main {
     public static void main(String[] args) {
-        FilesSeril file=new FilesSeril();
-        ArrayList <Deposit> arrayList=new ArrayList<>();
+       /* FilesSeril file=new FilesSeril();
+        ArrayList <Deposit> arrayList=new ArrayList<>();*/
+        SocketManipulate socketManipulate=new SocketManipulate();
+        socketManipulate.start();
 
-        /*TO FILE*/
+        /*TO FILE
        /* arrayList.add(new Deposit("Депозит 1", "Страна", Type.CALCULATED, "Депозит", 3, 33333, 22, 323232));
         arrayList.add(new Deposit("Депозит 2", "Страна2", Type.CUMULATIVE, "Депозит2", 4, 33333, 22, 323232));
         file.setDeposits(arrayList);
