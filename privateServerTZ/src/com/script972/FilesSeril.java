@@ -7,11 +7,12 @@ import java.util.ArrayList;
  * Created by script972 on 25.03.2017.
  */
 public class FilesSeril {
-    private ArrayList<Deposit> deposits=new ArrayList<>();
+    private ArrayList<Deposit> deposits=new ArrayList<Deposit>();
 
     public FilesSeril() {
         getFile();
     }
+
 
     /*Save object to SERIALIZE FILE*/
     public void saveFile(){
@@ -38,6 +39,7 @@ public class FilesSeril {
             in = new ObjectInputStream(new BufferedInputStream(
                     new FileInputStream("Deposits.ser")));
             deposits = (ArrayList)in.readObject();
+            System.out.println("FROM FILESSERIL   "+deposits);
         } catch ( IOException ex ) {
             ex.printStackTrace();
         } catch ( Exception ex ) {

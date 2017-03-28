@@ -1,23 +1,16 @@
 package com.script972;
 
-import com.script972.Model.Deposit;
 import com.script972.Model.Type;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-import javax.swing.text.TabableView;
-import java.awt.*;
 import java.math.BigInteger;
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.Observable;
-import java.util.ResourceBundle;
 
 public class Controller  {
 

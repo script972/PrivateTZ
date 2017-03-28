@@ -1,7 +1,7 @@
 package com.script972;
 
 import java.io.Serializable;
-import java.math.BigInteger;
+
 
 /**
  * Created by script972 on 23.03.2017.
@@ -12,11 +12,11 @@ public class Deposit implements Serializable {
     Type type;
     String deposit;
     int account_id;
-    long money;
+    double money;
     int persent;
     int time_constraints;
 
-    public Deposit(String name, String country, Type type, String deposit, int account_id, long money, int persent, int time_constraints) {
+    public Deposit(String name, String country, Type type, String deposit, int account_id, double money, int persent, int time_constraints) {
         this.name = name;
         this.country = country;
         this.type = type;
@@ -81,11 +81,11 @@ public class Deposit implements Serializable {
         this.account_id = account_id;
     }
 
-    public long getMoney() {
+    public double getMoney() {
         return money;
     }
 
-    public void setMoney(long money) {
+    public void setMoney(double money) {
         this.money = money;
     }
 

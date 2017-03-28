@@ -1,21 +1,26 @@
-package com.script972.Model;
+package com.script972;
 
-import java.math.BigInteger;
+
+
+import com.script972.Model.Type;
+
+import java.io.Serializable;
+
 
 /**
  * Created by script972 on 24.03.2017.
  */
-public class Deposit {
+public class Deposit implements Serializable {
     String name;
     String country;
     Type type;
     String deposit;
     int account_id;
-    long money;
+    double money;
     int persent;
     int time_constraints;
 
-    public Deposit(String name, String country, Type type, String deposit, int account_id, long money, int persent, int time_constraints) {
+    public Deposit(String name, String country, Type type, String deposit, int account_id, double money, int persent, int time_constraints) {
         this.name = name;
         this.country = country;
         this.type = type;
@@ -80,11 +85,11 @@ public class Deposit {
         this.account_id = account_id;
     }
 
-    public long getMoney() {
+    public double getMoney() {
         return money;
     }
 
-    public void setMoney(long money) {
+    public void setMoney(double money) {
         this.money = money;
     }
 
