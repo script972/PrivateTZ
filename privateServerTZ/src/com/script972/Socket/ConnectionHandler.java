@@ -36,7 +36,15 @@ public class ConnectionHandler implements Runnable {
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(socket.getOutputStream());
             String responce;
             while (true) {
-                String comand = objectInputStream.readUTF();
+                String comand = null;
+                try {
+                    comand = (String)objectInputStream.readObject();
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                }
+                if(comand.equals("EXIT:0")){
+                    break;
+                }
                 System.out.println("take a message " + comand);
                 String argument = null;
                 String function = null;
@@ -51,6 +59,10 @@ public class ConnectionHandler implements Runnable {
                 responce=processingComand.comandDo(function,argument);
                 objectOutputStream.writeObject(responce);
             }
+            objectInputStream.close();
+            objectOutputStream.close();
+            socket.close();
+            System.out.println("Conneting closed");
         } catch (IOException e) {
             e.printStackTrace();
         }

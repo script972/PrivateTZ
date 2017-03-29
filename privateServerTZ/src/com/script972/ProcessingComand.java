@@ -110,6 +110,18 @@ public class ProcessingComand implements Comands {
         System.out.println("Обработка depositor");
         Gson gson = new Gson();
         Deposit depObject=gson.fromJson(deposit, Deposit.class);
+        if(depObject.getMoney()<=0)
+            return "Money <=0";
+        if(depObject.getPersent()<=0)
+            return "Persent <=0";
+        if(depObject.getTime_constraints()<=0)
+            return "time deposit <=0";
+        for (Deposit dep:
+             arrayList) {
+            if(dep.getAccount_id()==depObject.getAccount_id())
+                return "This ID already exist";
+
+        }
         arrayList.add(depObject);
         filesSeril.setDeposits(arrayList);
         filesSeril.saveFile();

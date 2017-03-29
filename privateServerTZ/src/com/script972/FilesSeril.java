@@ -39,7 +39,6 @@ public class FilesSeril {
             in = new ObjectInputStream(new BufferedInputStream(
                     new FileInputStream("Deposits.ser")));
             deposits = (ArrayList)in.readObject();
-            System.out.println("FROM FILESSERIL   "+deposits);
         } catch ( IOException ex ) {
             ex.printStackTrace();
         } catch ( Exception ex ) {

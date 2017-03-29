@@ -33,12 +33,17 @@ public class SocketsManipulate extends Thread {
 
         while (true){
             line=keyboard.readLine();
-            if(line.contains("add")){
+            if(line.equals("EXIT:0")){
+                out.writeObject("EXIT:0");
+                out.flush();
+                break;
+            }
+            if(line.equals("add")){
                 String str=addDepositObject();
-                out.writeUTF(line+"<"+str+">");
+                out.writeObject(line+"<"+str+">");
                 out.flush();
             }else {
-                out.writeUTF(line);
+                out.writeObject(line);
                 out.flush();
             }
             try {
@@ -57,6 +62,10 @@ public class SocketsManipulate extends Thread {
             }
 
         }
+        in.close();
+//        out.close();
+        clientSocket.close();
+
     }
 
     private void arrOut(ArrayList<Deposit> arrayList) {
