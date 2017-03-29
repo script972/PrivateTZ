@@ -118,13 +118,14 @@ public class ProcessingComand implements Comands {
 
     @Override
     public String delete(int accoutndId) {
-        System.out.println("Обработка delete");
+        System.out.println("Обработка delete argument: "+accoutndId);
         boolean is=false;
         for (Deposit dep :
                 arrayList) {
-            if (dep.account_id == accoutndId) {
+            if (dep.account_id==accoutndId) {
                 is=true;
                 arrayList.remove(dep);
+                break;
             }
         }
         if(is==false)
@@ -144,8 +145,8 @@ public class ProcessingComand implements Comands {
 
     public String comandDo(String function, String argument){
         String result = null;
-        System.out.println("function "+function);
-        System.out.println("argument "+argument);
+/*        System.out.println("function "+function);
+        System.out.println("argument "+argument);*/
         switch (function){
             case "list":result=list(); break;
             case "sum": result=sum(); break;

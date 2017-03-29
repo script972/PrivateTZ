@@ -2,10 +2,8 @@ package com.script972.Model;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.script972.Deposit;
 
 import java.io.*;
-import java.lang.reflect.*;
 import java.net.Socket;
 import java.util.ArrayList;
 
@@ -15,22 +13,21 @@ import java.util.ArrayList;
 public class SocketsManipulate extends Thread {
     public void connect() throws IOException {
         Socket clientSocket=null;
-        int port=145;
+        int port=1450;
         String serv="127.0.0.1";
         try {
-            clientSocket=new Socket("localhost", 145);
+            clientSocket=new Socket("localhost", port);
         } catch (IOException e) {
             System.out.println("error");
         }
-
 
         ObjectOutputStream out=new ObjectOutputStream(clientSocket.getOutputStream());
         ObjectInputStream in =  new ObjectInputStream(clientSocket.getInputStream());
 
         BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
         String line = null;
-        System.out.println("Type in something and press enter. Will send it to the server and tell ya what it thinks.");
-        ArrayList<Deposit> arrayList=new ArrayList<>();
+        System.out.println("Type comand for server.");
+        ArrayList<Deposit> arrayList;
         java.lang.reflect.Type type= new TypeToken<ArrayList<Deposit>>(){}.getType();
 
 
@@ -46,21 +43,26 @@ public class SocketsManipulate extends Thread {
             }
             try {
                 String recponce= (String) in.readObject();
-                System.out.println(recponce);
                 Gson gson=new Gson();
                 if(recponce.contains("{") && recponce.contains("}") && !recponce.equals(null)) {
                     arrayList = gson.fromJson(recponce, type);
-                    System.out.println("array " + arrayList.get(0));
+                    arrOut(arrayList);
                 }else
                 {
                     System.out.println(recponce);
                 }
 
-
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
             }
 
+        }
+    }
+
+    private void arrOut(ArrayList<Deposit> arrayList) {
+        for (Deposit dep :
+                arrayList) {
+            System.out.println(dep);
         }
     }
 
@@ -99,8 +101,8 @@ public class SocketsManipulate extends Thread {
         int profitalbe=Integer.parseInt(bufferedReader.readLine());
         System.out.println("Input time: ");
         int time=Integer.parseInt(bufferedReader.readLine());
-
         Deposit deposit=new Deposit(bankName, country, type, depositor, account_id, amount, profitalbe, time);
+        System.out.println(deposit);
         Gson gson=new Gson();
         return gson.toJson(deposit);
 

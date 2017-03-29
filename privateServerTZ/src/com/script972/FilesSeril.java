@@ -13,7 +13,6 @@ public class FilesSeril {
         getFile();
     }
 
-
     /*Save object to SERIALIZE FILE*/
     public void saveFile(){
         ObjectOutputStream out = null;
@@ -32,6 +31,7 @@ public class FilesSeril {
                 }
         }
     }
+
     /*GET object from FILE */
     public void getFile(){
         ObjectInputStream in = null;

@@ -1,7 +1,7 @@
 package com.script972;
 
 import java.util.ArrayList;
-
+//*.pp.ua nik.ua
 /**
  * Created by script972 on 26.03.2017.
  */

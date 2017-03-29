@@ -1,4 +1,4 @@
-package com.script972;
+package com.script972.Model;
 
 
 

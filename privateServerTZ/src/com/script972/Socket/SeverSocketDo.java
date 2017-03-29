@@ -9,7 +9,7 @@ import java.net.Socket;
  */
 public class SeverSocketDo {
     private ServerSocket server;
-    private int port=145;
+    private int port=1450;
 
     public SeverSocketDo() {
         try {
