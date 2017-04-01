@@ -21,8 +21,8 @@ public class SocketsManipulate extends Thread {
             System.out.println("error");
         }
 
-        ObjectOutputStream out=new ObjectOutputStream(clientSocket.getOutputStream());
-        ObjectInputStream in =  new ObjectInputStream(clientSocket.getInputStream());
+        PrintWriter out=new PrintWriter(new OutputStreamWriter(clientSocket.getOutputStream()),true);
+        BufferedReader in =  new BufferedReader( new InputStreamReader(clientSocket.getInputStream()));
 
         BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
         String line = null;
@@ -34,20 +34,20 @@ public class SocketsManipulate extends Thread {
         while (true){
             line=keyboard.readLine();
             if(line.equals("EXIT:0")){
-                out.writeObject("EXIT:0");
+                out.println("EXIT:0");
                 out.flush();
                 break;
             }
             if(line.equals("add")){
                 String str=addDepositObject();
-                out.writeObject(line+"<"+str+">");
+                out.println(line+"<"+str+">");
                 out.flush();
             }else {
-                out.writeObject(line);
+                out.println(line);
                 out.flush();
             }
-            try {
-                String recponce= (String) in.readObject();
+
+                String recponce= (String) in.readLine();
                 Gson gson=new Gson();
                 if(recponce.contains("{") && recponce.contains("}") && !recponce.equals(null)) {
                     arrayList = gson.fromJson(recponce, type);
@@ -57,13 +57,11 @@ public class SocketsManipulate extends Thread {
                     System.out.println(recponce);
                 }
 
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
-            }
+
 
         }
         in.close();
-//        out.close();
+        out.close();
         clientSocket.close();
 
     }

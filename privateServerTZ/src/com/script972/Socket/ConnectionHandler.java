@@ -32,16 +32,13 @@ public class ConnectionHandler implements Runnable {
         System.out.println("someone connecting");
         System.out.println("among connect  "+conectors);
         try {
-            ObjectInputStream objectInputStream = new ObjectInputStream(socket.getInputStream());
-            ObjectOutputStream objectOutputStream = new ObjectOutputStream(socket.getOutputStream());
+            BufferedReader objectInputStream = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            PrintWriter objectOutputStream = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()),true);
+
             String responce;
             while (true) {
                 String comand = null;
-                try {
-                    comand = (String)objectInputStream.readObject();
-                } catch (ClassNotFoundException e) {
-                    e.printStackTrace();
-                }
+                comand = (String)objectInputStream.readLine();
                 if(comand.equals("EXIT:0")){
                     break;
                 }
@@ -57,7 +54,7 @@ public class ConnectionHandler implements Runnable {
                     }
                 ProcessingComand processingComand=new ProcessingComand();
                 responce=processingComand.comandDo(function,argument);
-                objectOutputStream.writeObject(responce);
+                objectOutputStream.println(responce);
             }
             objectInputStream.close();
             objectOutputStream.close();
